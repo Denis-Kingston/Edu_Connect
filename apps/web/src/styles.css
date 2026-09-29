@@ -1,0 +1,265 @@
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+}
+
+img { max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: white;
+  font-weight: 700;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.brand-subtitle {
+  color: #475569;
+  font-size: 0.76rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #0f172a;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.hero-panel,
+.panel,
+.metric-card {
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.04);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-panel h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+
+.hero-panel p {
+  color: #475569;
+  max-width: 620px;
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 12px;
+  padding: 0 18px;
+  border: none;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: white;
+}
+
+.secondary-button {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.metric-card h3,
+.panel h2,
+.panel h3 {
+  margin-top: 0;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.metric-row:last-child { border-bottom: none; }
+
+.dashboard-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+
+.summary-card small {
+  color: #64748b;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.summary-card strong {
+  font-size: 1.3rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 12px;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+tbody td {
+  padding: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.login-panel {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stack-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.stack-form input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: white;
+}
+
+.error-box {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.demo-box {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.demo-box ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #475569;
+}
+
+.activity-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #334155;
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .topbar,
+  .hero-grid,
+  .summary-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .topbar {
+    justify-content: start;
+  }
+}
