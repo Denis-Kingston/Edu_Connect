@@ -25,3 +25,21 @@ institutionsRouter.post('/', requireAuth, requireRole('SUPER_ADMIN', 'UNIVERSITY
 
   return res.status(201).json({ data: institution });
 });
+
+institutionsRouter.post('/:institutionId/programs', requireAuth, requireRole('SUPER_ADMIN', 'UNIVERSITY_OFFICER'), async (req, res) => {
+  const { institutionId } = req.params;
+  const payload = req.body || {};
+
+  const program = await prisma.program.create({
+    data: {
+      institutionId,
+      name: payload.name,
+      description: payload.description || '',
+      minimumPoints: Number(payload.minimumPoints || 0),
+      applicationOpen: new Date(payload.applicationOpen || Date.now()),
+      applicationClose: new Date(payload.applicationClose || Date.now() + 1000 * 60 * 60 * 24 * 30),
+    },
+  });
+
+  return res.status(201).json({ data: program });
+});

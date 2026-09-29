@@ -54,3 +54,13 @@ applicationsRouter.post('/submit', requireAuth, requireRole('APPLICANT'), async 
 
   return res.status(201).json({ data: application });
 });
+
+applicationsRouter.patch('/:id/status', requireAuth, requireRole('SUPER_ADMIN', 'UNIVERSITY_OFFICER'), async (req, res) => {
+  const { status } = req.body || {};
+  const app = await prisma.application.update({
+    where: { id: req.params.id },
+    data: { status },
+  });
+
+  return res.status(200).json({ data: app });
+});

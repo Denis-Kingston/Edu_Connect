@@ -216,6 +216,10 @@ tbody td {
   margin-top: 20px;
 }
 
+.compact-form {
+  margin-top: 12px;
+}
+
 .stack-form input {
   width: 100%;
   padding: 11px 12px;
@@ -224,11 +228,24 @@ tbody td {
   background: white;
 }
 
+.status-box,
+.verify-box,
+.error-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.status-box,
+.verify-box {
+  background: #ecfeff;
+  color: #0f172a;
+  border: 1px solid #a5f3fc;
+}
+
 .error-box {
   background: #fee2e2;
   color: #b91c1c;
-  padding: 10px 12px;
-  border-radius: 10px;
 }
 
 .demo-box {
@@ -249,6 +266,37 @@ tbody td {
   color: #334155;
   display: grid;
   gap: 10px;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.program-card {
+  text-align: left;
+  border: 1px solid #dbeafe;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+}
+
+.program-card.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.selected-program {
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: grid;
 }
 
 @media (max-width: 760px) {

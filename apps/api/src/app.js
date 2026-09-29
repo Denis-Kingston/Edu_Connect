@@ -4,6 +4,7 @@ import { authRouter } from './routes/auth.js';
 import { institutionsRouter } from './routes/institutions.js';
 import { applicationsRouter } from './routes/applications.js';
 import { paymentsRouter } from './routes/payments.js';
+import { nectaRouter } from './routes/necta.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 
 export const app = express();
@@ -16,6 +17,7 @@ app.get('/health', (_req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/necta', nectaRouter);
 app.use('/api/institutions', institutionsRouter);
 app.use('/api/applications', applicationsRouter);
 app.use('/api/payments', paymentsRouter);
